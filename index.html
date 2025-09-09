@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detección de Gestos Faciales</title>
+    Copy to BlackBox<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-dark text-white">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logo.png" alt="Logo" width="30" height="30"> FaceTracker
+      </a>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container my-5">
+    <div class="row justify-content-center align-items-start g-4">
+      
+      <!-- Columna Izquierda: Video procesado -->
+      <div class="col-md-7 text-center">
+        <canvas id="canvasOutput" width="640" height="480" class="rounded shadow-lg border border-warning"></canvas>
+        <!-- Video oculto solo como input -->
+        <video id="videoInput" width="640" height="480" autoplay playsinline hidden></video>
+      </div>
+
+      <!-- Columna Derecha: Card Pixel -->
+<div class="uiverse-pixel-card">
+  <div class="uiverse-card-header">FACE MOVEMENT</div>
+  <div class="uiverse-card-body">
+    <p>👀 Ojos: <span id="eyeCount">0</span> | <span id="eyeStatus">❌</span></p>
+    <p>👁️ Cejas: <span id="browCount">0</span> | <span id="browStatus">❌</span></p>
+    <p>👄 Boca: <span id="mouthCount">0</span> | <span id="mouthStatus">❌</span></p>
+    <p>Status: <span class="status">TRACKING</span></p>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-danger text-center text-white py-3 mt-5 shadow-lg">
+    <p id="programmerInfo" class="mb-0">Cargando datos del programador...</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://docs.opencv.org/4.5.0/opencv.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
